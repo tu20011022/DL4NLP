@@ -1,9 +1,12 @@
-<?php
- 
-$token = "test";
- 
-if ($_GET['hub_verify_token'] == $token) {
-  echo $_GET['hub_challenge'];
-} else {
-  echo 'error';
+if(isset($_REQUEST['hub_challenge']))
+{
+  $challenge=$_REQUEST('hub_challenge');
+  $token="test";
+}
+
+if($token=="test")
+{
+
+ echo $challenge; 
+
 }
